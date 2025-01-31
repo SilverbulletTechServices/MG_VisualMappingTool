@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Draggable & Connectable Box Manager</title>
+
+  <!-- jQuery and jQuery UI -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <!-- TailwindCSS (optional) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- LeaderLine.js for drawing connections -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leader-line/1.0.7/leader-line.min.js"></script>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <div class="main-container">
+    <div style="width:100%; text-align:center; margin-bottom:1rem; font-weight: 900;">
+      <h1>Draggable &amp; Connectable Database Mapping Manager</h1>
+    </div>
+
+    <!-- Export/Import Buttons -->
+    <div class="flex-row">
+      <button id="exportBtn">Show JSON</button>
+      <button id="downloadBtn">Download JSON</button>
+      <button id="importBtn">Upload JSON</button>
+      <input type="file" accept="application/json" id="fileInput" class="hidden" />
+    </div>
+
+    <!-- Source & Target Sections -->
+    <div class="flex-row">
+      <!-- SOURCE SECTION -->
+      <div class="section-container" id="sourceBoxesContainer">
+        <div class="box-header" style="margin-bottom:0.5rem;">
+          <span style="font-size:1rem; font-weight:500;">Source System</span>
+        </div>
+        <div class="flex-row" style="margin-bottom:0.5rem;">
+          <button id="addBoxSourceBtn">Add Box (Source)</button>
+          <button id="uploadCsvSourceBtn">Upload CSV (Source)</button>
+          <input 
+            type="file" 
+            accept=".csv" 
+            id="csvFileSourceInput" 
+            class="hidden"
+          />
+        </div>
+      </div>
+
+      <!-- TARGET SECTION -->
+      <div class="section-container" id="targetBoxesContainer">
+        <div class="box-header" style="margin-bottom:0.5rem;">
+          <span style="font-size:1rem; font-weight:500;">Target System</span>
+        </div>
+        <div class="flex-row" style="margin-bottom:0.5rem;">
+          <button id="addBoxTargetBtn">Add Box (Target)</button>
+          <button id="uploadCsvTargetBtn">Upload CSV (Target)</button>
+          <input 
+            type="file" 
+            accept=".csv" 
+            id="csvFileTargetInput" 
+            class="hidden"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JSON Modal -->
+  <div 
+    id="jsonModal" 
+    class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-40 hidden"
+  >
+    <div class="json-modal-content" id="jsonModalContent">
+      <h3 class="mb-2 text-lg font-semibold">Exported JSON</h3>
+      <textarea id="jsonTextarea" readonly></textarea>
+      <button id="closeModalBtn">Close</button>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="main.js"></script>
+  <script src="importExport.js"></script>
+  <script src="uiEvents.js"></script>
+
+</body>
+</html>
