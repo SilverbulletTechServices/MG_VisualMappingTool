@@ -3,9 +3,9 @@
     --primary: #2563eb;      /* Modern blue */
     --secondary: #3b82f6;   /* Lighter blue */
     --accent: #22c55e;      /* Fresh green */
-    --background: #f8fafc;  /* Light slate */
+    --background: #000980;  /* Dark Blue */
     --surface: #ffffff;     /* Pure white */
-    --text: #1e293b;        /* Dark slate */
+    --text: #171a1f;        /* Dark slate */
     --border: #e2e8f0;      /* Light gray */
   }
 
@@ -137,6 +137,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    font-size: 12px;
   }
 
   .attribute-item {
@@ -156,6 +157,9 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
 
+  .attr-name {
+    color: #FFFFFF
+  }
   .selected {
     background: #eff6ff !important;
     box-shadow: inset 0 0 0 2px var(--primary);
