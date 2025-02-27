@@ -21,7 +21,7 @@
   --primary: #2563eb;      /* Modern blue */
   --secondary: #3b82f6;   /* Lighter blue */
   --accent: #22c55e;      /* Fresh green */
-  --background: #000980;  /* Dark Blue */
+  --background: #c7c7c8;  /* Light Grey */
   --surface: #ffffff;     /* Pure white */
   --text: #171a1f;        /* Dark slate */
   --border: #e2e8f0;      /* Light gray */
@@ -163,7 +163,7 @@ button:hover {
   align-items: center;
   gap: 0.75rem;
   margin: 0.5rem 0;
-  padding: 0.75rem;
+  padding: 0.25rem;
   border-radius: 6px;
   background: var(--background);
   transition: all 0.2s ease;
@@ -175,9 +175,11 @@ button:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.attr-name {
-  color: #FFFFFF
+.attr-value {
+  background: transparent !important; 
+  font-weight: 900;
 }
+
 .selected {
   background: #eff6ff !important;
   box-shadow: inset 0 0 0 2px var(--primary);
